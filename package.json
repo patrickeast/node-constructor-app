@@ -1,0 +1,30 @@
+{
+  "name": "constructor-app",
+  "version": "1.0.0",
+  "description": "A node-based app focusing on using constrcutors to build a word guess game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickeast/node-constructor-app.git"
+  },
+  "keywords": [
+    "node.js",
+    "constructor",
+    "node",
+    "word-guess",
+    "game",
+    "app"
+  ],
+  "author": "Patrick East",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickeast/node-constructor-app/issues"
+  },
+  "homepage": "https://github.com/patrickeast/node-constructor-app#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0"
+  }
+}
