@@ -26,3 +26,5 @@ class Letter {
         // correctly.
     }
 }
+
+module.exports = Letter;

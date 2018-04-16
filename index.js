@@ -26,6 +26,8 @@ inquirer.prompt([
     if (err) {
         console.log(err);
     } else {
+        const Ted = new Word();
+        console.log(Ted);
         console.log(data.letterGuess.charAt(0));
     }
 })

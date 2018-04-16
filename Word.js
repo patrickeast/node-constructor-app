@@ -5,6 +5,7 @@ class Word {
     constructor(letterArr, wordString, checkAgainst) {
         this.letterArr = [];
         const underlyingWord = new Letter();
+        console.log(underlyingWord);
     }
     wordString() {
         toString: ;
@@ -20,3 +21,4 @@ class Word {
     }
 }
 
+module.exports = Word;
