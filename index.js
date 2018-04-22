@@ -1,34 +1,21 @@
-const inquirer = require("inquirer");
-const Word = require("./Word");
 
 
-console.log("----------------------------------");
-console.log(" ");
-console.log("Welcome to Constructor Word Guess!");
-console.log("");
-console.log("----------------------------------");
+//Hey Rob, are you tired of seeing pop punk bands for every one of my assignments yet? ¯\_(ツ)_/¯ 
+const possibleWords = [
+    'bayside',
+    'yellowcard',
+    'alexisonfire',
+    'atmosphere',
+    'copeland',
+    'lagwagon',
+    'cartel',
+    'mxpx',
+    'ramones',
+    'sugarcult',
+    'rufio',
+    'ataris',
+    'sugarcult'
+  ];
 
-inquirer.prompt([
-    {
-        type: "input",
-        name: "name",
-        message: "What is your name?"
-    }, {
-        type: "confirm",
-        name: "start",
-        message: "Are you ready to play?"
-    }, {
-        type: "input",
-        name: "letterGuess",
-        message: "All right. Guess a letter!"
-    }
-]).then(function (data, err) {
-    if (err) {
-        console.log(err);
-    } else {
-        const Ted = new Word();
-        console.log(Ted);
-        console.log(data.letterGuess.charAt(0));
-    }
-})
+  module.exports = possibleWords;
 

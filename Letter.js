@@ -1,30 +1,42 @@
 class Letter {
-    constructor(character, isGuessed, isReturned) {
-        this.character = character;
-        this.isGuessed = false;
-    }
-    isReturned() {
-        if (process.argv[2] == this.character) {
-            return this.character;
-            console.log("CORRECT!!!");
-        } else {
-            console.log("INCORRECT!!!");
-        }
-        
-        // Returns the underlying character if the letter has 
-        // been guessed, or a placehder if the letter has not 
-        // been guessed.
-    }
-    isGuessed(guess) {
-        if (this.guess == this.character) {
-            this.isGuessed = true;
-            console.log(this.isGuessed);
-        }
-        // Take the character as an argument and checks it 
-        // against the underlying character, updating the 
-        // stored boolean value to true if it was guessed 
-        // correctly.
-    }
-}
+	constructor(word, correctGuess) {
+		this.gameWord = word;
+		this.correctLetter = correctGuess;
+		this.displayText = "";
+		this.winner = false;
+	}
+	// Returns the underlying character if the letter has been guessed, 
+	// or a placehder if the letter has not been guessed.
+	parseDisplay() {
+		let showCharacter = "";
+
+		if (this.correctLetter == undefined) {
+			for (let i = 0; i < this.gameWord.length; i++) {
+				showCharacter += " _ ";
+			}
+		} else {
+			for (let i = 0; i < this.gameWord.length; i++) {
+				let letterFound = false;
+
+				for (let j = 0; j < this.correctLetter.length; j++) {
+					if (this.gameWord[i] == this.correctLetter[j]) {
+						showCharacter += this.correctLetter[j];
+						letterFound = true;
+					}
+				}
+
+				if (!letterFound) {
+					showCharacter += " _ ";
+				}
+			}
+		}
+		this.displayText = showCharacter.trim();
+		console.log(this.displayText);
+
+		if(this.displayText == this.gameWord) {
+			this.winner = true;
+		}
+	}
+};
 
 module.exports = Letter;
